@@ -3,9 +3,7 @@ import { Product } from './product';
 import { CartService } from './cart.service';
 @Component({
     selector: 'app-addToCart',
-    template: `<button class="btn btn-primary"
-      (click)="AddInCart()"
-    >Add To Cart</button>`,
+    templateUrl: './addToCart.component.html',
 
     //providers:[CartService]
 })
@@ -20,9 +18,9 @@ export class AddToCartComponent implements OnInit {
     ngOnInit() { }
      AddInCart()
     {
-        console.log(this.SelectedProduct)
-        alert("Product Added"+
-        this.SelectedProduct.productname)
+        // console.log(this.SelectedProduct)
+        // alert("Product Added"+
+        // this.SelectedProduct.productname)
         this.cartservice.AddToCart
         (this.SelectedProduct)
         

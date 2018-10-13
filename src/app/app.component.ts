@@ -8,6 +8,5 @@ import { CartService } from './cart.service';
   providers:[CartService]
 })
 export class AppComponent {
-  title = 'Mobile DuNiYaA!!!!';
-  name ="SHOPPING BAZAR"
+
 }

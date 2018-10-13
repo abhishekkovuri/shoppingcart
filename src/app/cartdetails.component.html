@@ -1,0 +1,19 @@
+
+<app-menu></app-menu>
+
+<!-- &nbsp;&nbsp;<button class="btn btn-primary"  (click)="MyFunction()">back to home</button> -->
+<h5>Cart Details</h5>
+<div class="table">
+<table>
+<tr>
+<th>Product Name</th>
+<th>Product Image</th>
+</tr>
+
+<tr *ngFor="let product of CartProducts">
+<td>{{product.productname}}</td>
+<td><img [src]="product.productimage"/></td>
+</tr>
+
+</table>
+</div>
