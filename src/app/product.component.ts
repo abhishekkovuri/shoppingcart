@@ -4,74 +4,9 @@ import { ProductService } from './product.service';
 
 @Component({
     selector: 'app-product',
-    template: `
-
-<!--<input type="text" [value]="ProductSlogan"  />-->
-<!--<button>-->
-
-<!--Template Reference Variable-->
-<!--<input type="text" #search
- (blur)="SearchProduct(search.value)" /> <br/>-->
-
- <!-- $event-->
- <input type="text" placeholder="search products" 
- (blur)="SearchProduct($event.target.value)" /> <br/>
-
-<button class="btn btn-info" (click)="SearchProduct(search.value)">
-Search Product</button>
-
-    <table class="table table-bordered">
-<tr>
-<th>Product Id</th>
-<th>Product Name</th>
-<th>Product Price</th>
-<th>Product Image</th>
-<th>Product Category</th>
-<th >    Actions      </th>
-<th>Delete item</th>
-<th>Add items</th>
-</tr>
-
-
-<tr *ngFor="let product of products;let i=index">
-<td> {{product.productid}}</td>
-<td> {{product.productname}}</td>
-<td> {{product.productprice}}</td>
-<!--Interpolation-->
-<!--<td> <img  src={{product.productimage}}/></td>-->
-<!--Property Binding-->
-<td> <img  [src]= "product.productimage"/></td>
-
-
-<td> {{product.productcategory}}</td>
-<!--<td><button *ngIf=IsAdmin>Delete</button> </td>-->
-
-<!--<td><button  class="btn btn-primary"
- [disabled]="false">Edit</button> </td>-->
-
- <td><button class="btn btn-info" (click)="ShowDetails(product)">
- Show Details</button></td>
-
-  <td><button class="btn btn-danger" (click)="DeleteProduct(i)">Delete</button></td>
-
-<app-addToCart [SelectedProduct]="product" >
-</app-addToCart>
-
-
-</tr>
-    </table>
-    
-    `,
-    styles:[
-    `
-    img{
-        width:auto;
-        height:100px;
-    }
-    `    
-    ],
-
-    providers:[ProductService]
+    templateUrl:'./product.component.html',
+    styleUrls:['./product.component.css'],
+     providers:[ProductService]
 })
 export class ProductComponent implements OnInit {
 
@@ -94,7 +29,7 @@ export class ProductComponent implements OnInit {
         this.products.splice(i,1)
     }
     ShowDetails(product:Product){
-        alert("Product Details++"+product.productname+"---"+product.productprice)
+        alert("Product Details "+product.productname+"  "+product.productprice)
     }
 
     SearchProduct(searchString:string)

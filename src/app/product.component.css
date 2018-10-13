@@ -1,0 +1,10 @@
+img{
+    width:auto;
+    height:100px;
+}
+.text{
+    border-radius:10px;
+    border-color:rgb(160, 160, 179);
+    text-align:center;
+    height:30px;
+}
